@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConsumoApiJNS6.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Consumo de API" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Codigo"    Grid.Row="0" Grid.Column="0" FontSize="18" TextDecorations="Strikethrough" />
+            <Label Text="Nombre"    Grid.Row="0" Grid.Column="1" FontSize="18" />
+            <Label Text="Apellido"  Grid.Row="0" Grid.Column="2" FontSize="18" />
+            <Label Text="Edad"      Grid.Row="0" Grid.Column="3" FontSize="18" />
+            <Label Text=""          Grid.Row="0" Grid.Column="4" FontSize="18" WidthRequest="5"/>
+        </Grid>
+
+        <ListView x:Name="listaestudiantes" ItemSelected="listaestudiantes_ItemSelected" >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition/>
+                                    
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblCodigo"   Text="{Binding Codigo}  " Grid.Row="0" Grid.Column="0" FontSize="20" TextDecorations="Underline"/>
+                                <Label x:Name="lblNombre"   Text="{Binding Nombre}  " Grid.Row="0" Grid.Column="1" FontSize="20" TextDecorations="Strikethrough"/>
+                                <Label x:Name="lblApellido" Text="{Binding Apellido}" Grid.Row="0" Grid.Column="2" FontSize="20"/>
+                                <Label x:Name="lblEdad"    Text="{Binding Edad}     " Grid.Row="0" Grid.Column="3" FontSize="20"/>
+                                <Button
+                                    x:Name="btnEliminar"
+                                    Text="X"
+                                    Padding="2"
+                                    FontSize="20"
+                                    BorderColor="Wheat"
+                                    BackgroundColor="Red"
+                                    Clicked="btnEliminar_Clicked"
+                                    TextColor="White"
+                                    CornerRadius="2"
+                                    CommandParameter="{Binding .}"
+                                    Grid.Row="0" Grid.Column="4"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="CenterAndExpand" />   
+
+                            </Grid>
+
+                        </StackLayout>
+                        <!--<ViewCell.ContextActions>
+                            <MenuItem
+                                x:Name="Elim"
+                                Text="eliminar"
+                                IsDestructive="true"
+                                
+                                >
+                                
+                            </MenuItem>
+                        </ViewCell.ContextActions>-->
+
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+       
+            <Button x:Name="btnmostrar" Grid.Row="0" Grid.Column="0"
+                    Text="Consultar"  Clicked="btnmostrar_Clicked"
+                    BackgroundColor="Black" TextColor="White"></Button>
+            
+            <Button x:Name="btnInsertar" Grid.Row="0" Grid.Column="1"
+                    Text="Insertar"  Clicked="btnInsertar_Clicked"
+                     BackgroundColor="Black" TextColor="White"></Button>
+
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

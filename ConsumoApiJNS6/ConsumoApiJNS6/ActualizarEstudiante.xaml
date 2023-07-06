@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConsumoApiJNS6.ActualizarEstudiante">
+
+    <StackLayout>
+        <Label Text="Ingresar Estudiante"
+               HorizontalTextAlignment="Center"
+                HorizontalOptions="CenterAndExpand" 
+               FontSize="20"/>
+        
+        <Label Text="Insertar Estudiante" FontSize="20"></Label>
+        <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" IsVisible="false" IsEnabled="false"/>
+        <Entry x:Name="txtNombre" Placeholder="Ingrese el Nombre"/>
+        <Entry x:Name="txtApellido" Placeholder="Ingrese el Apellido"/>
+        <Entry x:Name="txtEdad" Placeholder="Ingrese la Edad" Keyboard="Numeric"/>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnActualizar" Text="Actualizar" 
+                    Grid.Row="0" Grid.Column="0"
+                    Clicked="btnActualizar_Clicked"/>
+            
+            <Button x:Name="btnRegresar" Text="Regresar" 
+                    Grid.Row="0" Grid.Column="1"
+                    Clicked="btnRegresar_Clicked"/>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
