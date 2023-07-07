@@ -62,15 +62,16 @@ namespace ConsumoApiJNS6
 
                 await client.DeleteAsync(Config.API_URL +"?"+parametros);
 
-
-                await DisplayAlert("alerta", "Registro eliminado correctamente", "ok");
-
                 this.mostrar();
+
+                string mensaje = "Registro eliminado correctamente";
+                DependencyService.Get<IMensaje>().longAlert(mensaje);
 
             }
             catch (Exception ex)
             {
-                await  DisplayAlert("Error", ex.Message + "", "ok");
+                DependencyService.Get<IMensaje>().longAlert(ex.Message);
+
             }
         }
 

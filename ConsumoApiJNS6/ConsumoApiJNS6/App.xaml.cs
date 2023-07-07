@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,10 +11,10 @@ namespace ConsumoApiJNS6
     {
         public App()
         {
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-            
         }
 
         protected override void OnStart()
