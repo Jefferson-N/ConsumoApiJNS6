@@ -4,12 +4,11 @@
              x:Class="ConsumoApiJNS6.ActualizarEstudiante">
 
     <StackLayout>
-        <Label Text="Ingresar Estudiante"
+        <Label Text="Actualizar Estudiante"
                HorizontalTextAlignment="Center"
                 HorizontalOptions="CenterAndExpand" 
                FontSize="20"/>
         
-        <Label Text="Insertar Estudiante" FontSize="20"></Label>
         <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" IsVisible="false" IsEnabled="false"/>
         <Entry x:Name="txtNombre" Placeholder="Ingrese el Nombre"/>
         <Entry x:Name="txtApellido" Placeholder="Ingrese el Apellido"/>

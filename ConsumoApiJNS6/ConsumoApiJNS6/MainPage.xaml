@@ -49,8 +49,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="40"/>
                                 </Grid.ColumnDefinitions>
-                                <Label x:Name="lblCodigo"   Text="{Binding Codigo}  " Grid.Row="0" Grid.Column="0" FontSize="20" TextDecorations="Underline"/>
-                                <Label x:Name="lblNombre"   Text="{Binding Nombre}  " Grid.Row="0" Grid.Column="1" FontSize="20" TextDecorations="Strikethrough"/>
+                                <Label x:Name="lblCodigo"   Text="{Binding Codigo}  " Grid.Row="0" Grid.Column="0" FontSize="20" />
+                                <Label x:Name="lblNombre"   Text="{Binding Nombre}  " Grid.Row="0" Grid.Column="1" FontSize="20" />
                                 <Label x:Name="lblApellido" Text="{Binding Apellido}" Grid.Row="0" Grid.Column="2" FontSize="20"/>
                                 <Label x:Name="lblEdad"    Text="{Binding Edad}     " Grid.Row="0" Grid.Column="3" FontSize="20"/>
                                 <Button
@@ -71,7 +71,7 @@
                             </Grid>
 
                         </StackLayout>
-                        <!--<ViewCell.ContextActions>
+                        <ViewCell.ContextActions>
                             <MenuItem
                                 x:Name="Elim"
                                 Text="eliminar"
@@ -80,7 +80,7 @@
                                 >
                                 
                             </MenuItem>
-                        </ViewCell.ContextActions>-->
+                        </ViewCell.ContextActions>
 
                     </ViewCell>
                     

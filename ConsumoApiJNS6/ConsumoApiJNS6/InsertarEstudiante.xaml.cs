@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net;
+using System.Runtime.InteropServices.ComTypes;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,14 +28,15 @@ namespace ConsumoApiJNS6
 
 
 
-                client.UploadValues(Config.API_URL, "POST", parametros);               
+                client.UploadValues(Config.API_URL, "POST", parametros);
 
-                await DisplayAlert("alerta", "Registro insertado correctamente", "ok");
+               
                 this.mainPage();
 
             }
             catch (Exception ex) {
-                await DisplayAlert("Error", ex.Message , "ok");
+                DependencyService.Get<IMensaje>().longAlert(ex.Message);
+
             }
         }
 
@@ -42,6 +44,10 @@ namespace ConsumoApiJNS6
         {
             Navigation.RemovePage(this);
             this.Navigation.PushAsync(new MainPage());
+
+            string mensaje = "Registro insertado correctamente";
+            DependencyService.Get<IMensaje>().longAlert(mensaje);
+                       
         }
     }
 }

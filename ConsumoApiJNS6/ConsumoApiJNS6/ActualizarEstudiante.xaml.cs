@@ -42,16 +42,15 @@ namespace ConsumoApiJNS6
                 // WebClient client = new WebClient();
 
 
-                var a = client.PutAsync("http://192.168.100.11/ws_pruebas/Post.php?" + parametros1, null);
+                var a = client.PutAsync(Config.API_URL+"?" + parametros1, null);
 
-
-                await DisplayAlert("alerta", "Registro actualizado correctamente", "ok");
                 this.mainPage();
 
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message + "", "ok");
+                DependencyService.Get<IMensaje>().longAlert(ex.Message);
+
             }
         }
 
@@ -66,6 +65,10 @@ namespace ConsumoApiJNS6
         {
             Navigation.RemovePage(this);
             this.Navigation.PushAsync(new MainPage());
+
+            string mensaje = "Registro actualizado correctamente";
+            DependencyService.Get<IMensaje>().longAlert(mensaje);
+                       
         }
     }
 }
